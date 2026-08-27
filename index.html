@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Bhaiyuu ❤️</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#111;
+    font-family:"Comic Sans MS", cursive;
+    overflow:hidden;
+}
+
+.app{
+    width:100%;
+    max-width:430px;
+    height:100vh;
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+    background:#fff7ef;
+}
+
+/* Every screen */
+.screen{
+    position:absolute;
+    inset:0;
+    display:none;
+    padding:25px 20px;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    background:
+      radial-gradient(circle at 20% 20%,#ffd7d2 0 3px,transparent 4px),
+      radial-gradient(circle at 80% 70%,#ffd7d2 0 3px,transparent 4px),
+      #fff7ef;
+}
+
+.screen.active{
+    display:flex;
+    animation:show .5s ease;
+}
+
+@keyframes show{
+    from{
+        opacity:0;
+        transform:translateX(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* Card */
+.card{
+    width:100%;
+    padding:25px 18px;
+    background:#fffdf9;
+    border:3px solid #e64a45;
+    border-radius:28px;
+    box-shadow:0 7px 0 #b92e2a;
+}
+
+/* Heading */
+h1{
+    color:#c92f2c;
+    font-size:36px;
+    line-height:1.1;
+    margin:12px 0;
+}
+
+h2{
+    color:#c92f2c;
+    font-size:27px;
+    margin-bottom:15px;
+}
+
+p{
+    color:#572525;
+    font-size:17px;
+    line-height:1.6;
+}
+
+/* Shinchan */
+.shinchan{
+    width:170px;
+    height:190px;
+    object-fit:contain;
+    margin-bottom:10px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+/* Hearts */
+.hearts{
+    font-size:25px;
+    letter-spacing:6px;
+    margin-bottom:10px;
+}
+
+/* Buttons */
+button{
+    border:0;
+    background:#df3934;
+    color:white;
+    padding:14px 25px;
+    border-radius:30px;
+    font-size:17px;
+    font-weight:bold;
+    font-family:inherit;
+    margin:10px 4px;
+    box-shadow:0 5px 0 #a62220;
+    cursor:pointer;
+}
+
+button:active{
+    transform:translateY(3px);
+    box-shadow:0 2px 0 #a62220;
+}
+
+.light{
+    background:white;
+    color:#d93631;
+    border:2px solid #d93631;
+    box-shadow:none;
+}
+
+/* Gifts */
+.gifts{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:25px 0;
+}
+
+.gift{
+    font-size:55px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gift:hover{
+    transform:scale(1.15) rotate(-8deg);
+}
+
+/* Photo screen */
+.photo-box{
+    width:100%;
+    height:55vh;
+    min-height:350px;
+    background:white;
+    border:5px solid white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 5px 0 #df3934;
+    position:relative;
+}
+
+.photo-box img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#f5eee8;
+}
+
+.caption{
+    position:absolute;
+    bottom:12px;
+    left:12px;
+    right:12px;
+    padding:11px;
+    background:rgba(255,250,244,.95);
+    border:2px dashed #df3934;
+    border-radius:18px;
+    font-size:16px;
+    font-weight:bold;
+    color:#642222;
+}
+
+/* Letter */
+.letter{
+    text-align:left;
+    background:#fffaf1;
+    border:2px dashed #df3934;
+    border-radius:20px;
+    padding:18px;
+    color:#542323;
+    font-size:16px;
+    line-height:1.7;
+}
+
+/* Award */
+.award{
+    padding:25px 10px;
+    border:7px double #d19a28;
+    background:#fffbea;
+    border-radius:15px;
+}
+
+.award h1{
+    color:#a66c13;
+    font-family:Georgia,serif;
+    font-size:30px;
+}
+
+.medal{
+    font-size:60px;
+}
+
+/* Back button */
+.back{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:transparent;
+    color:#c92f2c;
+    box-shadow:none;
+    padding:5px 10px;
+    font-size:14px;
+}
+
+/* Confetti */
+.confetti{
+    position:fixed;
+    top:-30px;
+    font-size:23px;
+    animation:fall 3s linear forwards;
+    pointer-events:none;
+    z-index:100;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(700deg);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+<!-- SCREEN 1 -->
+<section class="screen active" id="screen0">
+
+<div class="card">
+
+<div class="hearts">❤️ ✨ ❤️</div>
+
+<img src="shinchan.png"
+     class="shinchan"
+     alt="Shinchan">
+
+<h1>I made something for you...</h1>
+
+<p>
+    Do you wanna see it,<br>
+    <b>Bhaiyuu? 🥺❤️</b>
+</p>
+
+<br>
+
+<button onclick="nextScreen(1)">
+    YESSS ❤️
+</button>
+
+<button class="light" onclick="noButton()">
+    NO 😒
+</button>
+
+<p id="noMessage"></p>
+
+</div>
+
+</section>
+
+
+
+<!-- SCREEN 2 -->
+<section class="screen" id="screen1">
+
+<button class="back" onclick="nextScreen(0)">
+← Back
+</button>
+
+<div class="card">
+
+<div class="hearts">🎁 🎁 🎁</div>
+
+<h2>
+Something is waiting for you 👀
+</h2>
+
+<p>
+Pick one gift...
+</p>
+
+<div class="gifts">
+
+<span class="gift" onclick="nextScreen(2)">
+🎁
+</span>
+
+<span class="gift" onclick="nextScreen(2)">
+🎁
+</span>
+
+<span class="gift" onclick="nextScreen(2)">
+🎁
+</span>
+
+</div>
+
+<p>
+Whatever you choose...<br>
+you're getting a Rakhi surprise 😂❤️
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- PHOTO SCREEN -->
+<section class="screen" id="screen2">
+
+<button class="back" onclick="nextScreen(1)">
+← Back
+</button>
+
+<div class="card">
+
+<h2>
+Our Memories 📸
+</h2>
+
+<div class="photo-box">
+
+<img id="memoryPhoto"
+     src="photo1.jpg"
+     alt="Bhaiyuu">
+
+<div class="caption"
+     id="photoCaption">
+Mera calm & composed Bhaiyuu ❤️
+</div>
+
+</div>
+
+<button onclick="nextPhoto()">
+NEXT MEMORY ➜
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- MESSAGE SCREEN -->
+<section class="screen" id="screen3">
+
+<button class="back" onclick="nextScreen(2)">
+← Back
+</button>
+
+<div class="card">
+
+<div class="hearts">
+🪢 ❤️ 🪢
+</div>
+
+<h2>
+Happy Raksha Bandhan Bhaiyuu! ❤️
+</h2>
+
+<p>
+Tum sirf mere bhai nahi ho...
+<br><br>
+
+Tum mere favourite
+<b>trouble-maker</b>,
+protector aur
+partner-in-crime ho 😂❤️
+</p>
+
+<br>
+
+<p>
+Kitni bhi fights ho,
+kitni bhi nok-jhok ho...
+<br><br>
+
+<b>
+You're still one of my favourite people. 🥹❤️
+</b>
+</p>
+
+<button onclick="nextScreen(4)">
+ONE LAST THING 💌
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- LETTER -->
+<section class="screen" id="screen4">
+
+<button class="back" onclick="nextScreen(3)">
+← Back
+</button>
+
+<div class="card">
+
+<h2>
+For You, Bhaiyuu 💌
+</h2>
+
+<div class="letter">
+
+Dear Bhaiyuu ❤️
+
+<br><br>
+
+Thank you for being there,
+for annoying me,
+for making me laugh
+and for always being someone
+I can count on.
+
+<br><br>
+
+Shayad main har baar bol nahi paati,
+but you really mean a lot to me. 🥺❤️
+
+<br><br>
+
+Aur haan...
+
+meri taraf se tumhara
+<b>"annoying sister"</b>
+subscription lifetime hai. 😂
+
+<br><br>
+
+No refunds. 😌❤️
+
+</div>
+
+<button onclick="nextScreen(5);confetti()">
+OPEN YOUR SURPRISE 🏆
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- FINAL -->
+<section class="screen" id="screen5">
+
+<div class="card">
+
+<div class="award">
+
+<div class="medal">
+🏆
+</div>
+
+<h1>
+BEST BHAIYUU AWARD
+</h1>
+
+<p>
+Presented with unlimited
+love, nok-jhok & drama ❤️
+</p>
+
+<br>
+
+<p>
+<b>
+To: Bhaiyuu
+</b>
+</p>
+
+<br>
+
+<p>
+For being my protector,
+partner-in-crime
+and forever family.
+</p>
+
+<div class="hearts">
+❤️ ❤️ ❤️
+</div>
+
+</div>
+
+<br>
+
+<p style="font-size:20px">
+<b>
+You're stuck with me forever. 😂❤️
+</b>
+</p>
+
+<br>
+
+<p>
+— Your annoying sister 💗
+</p>
+
+<button onclick="nextScreen(0)">
+REPLAY 🔄
+</button>
+
+</div>
+
+</section>
+
+
+</div>
+
+
+<script>
+
+let photoIndex = 0;
+
+const photos = [
+
+{
+    image:"photo1.jpg",
+    caption:"Mera calm & composed Bhaiyuu ❤️"
+},
+
+{
+    image:"photo2.jpg",
+    caption:"Mera rider, mera hero 😎❤️"
+},
+
+{
+    image:"photo3.jpg",
+    caption:"Hamesha saath, hamesha best ❤️"
+},
+
+{
+    image:"photo4.jpg",
+    caption:"Mera handsome Bhaiyuu 🥹❤️"
+}
+
+];
+
+
+function nextScreen(number){
+
+    document
+    .querySelectorAll(".screen")
+    .forEach(screen=>{
+        screen.classList.remove("active");
+    });
+
+    document
+    .getElementById("screen"+number)
+    .classList.add("active");
+
+}
+
+
+function noButton(){
+
+    document
+    .getElementById("noMessage")
+    .innerHTML =
+    "No dabaya?! 😭 Ab YES dabana padega 😂❤️";
+
+}
+
+
+function nextPhoto(){
+
+    photoIndex++;
+
+    if(photoIndex >= photos.length){
+
+        nextScreen(3);
+
+        return;
+
+    }
+
+    document
+    .getElementById("memoryPhoto")
+    .src =
+    photos[photoIndex].image;
+
+    document
+    .getElementById("photoCaption")
+    .innerText =
+    photos[photoIndex].caption;
+
+}
+
+
+function confetti(){
+
+    const emojis=[
+        "❤️",
+        "💗",
+        "✨",
+        "🎀",
+        "🪢",
+        "🎉"
+    ];
+
+    for(let i=0;i<40;i++){
+
+        let item=
+        document.createElement("div");
+
+        item.className="confetti";
+
+        item.innerText=
+        emojis[
+            Math.floor(
+                Math.random()*emojis.length
+            )
+        ];
+
+        item.style.left=
+        Math.random()*100+"vw";
+
+        item.style.animationDelay=
+        Math.random()+"s";
+
+        document.body.appendChild(item);
+
+        setTimeout(()=>{
+            item.remove();
+        },3500);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
