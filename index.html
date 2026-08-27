@@ -3,20 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Bhaiyuu ❤️</title>
+
+<title>For My Bhaiyuu ❤️</title>
 
 <style>
+
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
 }
 
 body{
     background:#111;
-    font-family:"Comic Sans MS", cursive;
+    font-family:"Comic Sans MS","Trebuchet MS",sans-serif;
     overflow:hidden;
 }
+
+/* MAIN MOBILE AREA */
 
 .app{
     width:100%;
@@ -25,271 +34,618 @@ body{
     margin:auto;
     position:relative;
     overflow:hidden;
-    background:#fff7ef;
+
+    background:
+    radial-gradient(circle at 10% 20%,#ffd8d3 0 3px,transparent 4px),
+    radial-gradient(circle at 90% 30%,#ffd8d3 0 3px,transparent 4px),
+    radial-gradient(circle at 20% 80%,#ffe5a8 0 3px,transparent 4px),
+    #fff8ef;
 }
 
-/* Every screen */
+
+/* SCREEN */
+
 .screen{
     position:absolute;
     inset:0;
+
     display:none;
-    padding:25px 20px;
+
     align-items:center;
     justify-content:center;
+
+    padding:25px 20px;
+
     text-align:center;
 
+    overflow-y:auto;
+
     background:
-      radial-gradient(circle at 20% 20%,#ffd7d2 0 3px,transparent 4px),
-      radial-gradient(circle at 80% 70%,#ffd7d2 0 3px,transparent 4px),
-      #fff7ef;
+    linear-gradient(
+        rgba(255,255,255,.82),
+        rgba(255,255,255,.82)
+    ),
+    repeating-linear-gradient(
+        0deg,
+        #ef6a5f 0px,
+        #ef6a5f 10px,
+        #fff2e8 10px,
+        #fff2e8 20px
+    );
 }
 
 .screen.active{
     display:flex;
-    animation:show .5s ease;
+
+    animation:
+    screenIn .5s ease;
 }
 
-@keyframes show{
+
+@keyframes screenIn{
+
     from{
         opacity:0;
-        transform:translateX(40px);
+        transform:translateX(50px);
     }
+
     to{
         opacity:1;
         transform:translateX(0);
     }
+
 }
 
-/* Card */
+
+/* CARD */
+
 .card{
+
     width:100%;
-    padding:25px 18px;
+
     background:#fffdf9;
-    border:3px solid #e64a45;
-    border-radius:28px;
-    box-shadow:0 7px 0 #b92e2a;
+
+    border:3px solid #df4742;
+
+    border-radius:30px;
+
+    padding:25px 18px;
+
+    box-shadow:
+    0 8px 0 #b82e2a;
+
 }
 
-/* Heading */
+
+/* TEXT */
+
 h1{
-    color:#c92f2c;
+
+    color:#c62e2b;
+
     font-size:36px;
+
     line-height:1.1;
-    margin:12px 0;
+
+    margin:10px 0 15px;
+
 }
+
 
 h2{
-    color:#c92f2c;
-    font-size:27px;
-    margin-bottom:15px;
+
+    color:#c62e2b;
+
+    font-size:28px;
+
+    margin-bottom:18px;
+
 }
+
 
 p{
-    color:#572525;
+
+    color:#542626;
+
     font-size:17px;
+
     line-height:1.6;
+
 }
 
-/* Shinchan */
+
+.small{
+
+    font-size:14px;
+
+    color:#8b6666;
+
+}
+
+
+/* HEARTS */
+
+.hearts{
+
+    font-size:25px;
+
+    letter-spacing:6px;
+
+    margin-bottom:12px;
+
+}
+
+
+/* SHINCHAN */
+
 .shinchan{
-    width:170px;
+
+    width:175px;
+
     height:190px;
+
     object-fit:contain;
-    margin-bottom:10px;
-    animation:bounce 2s infinite;
+
+    margin:auto;
+
+    display:block;
+
+    animation:
+    shinchanMove 2s infinite ease-in-out;
+
 }
 
-@keyframes bounce{
+
+@keyframes shinchanMove{
+
+    0%,100%{
+        transform:translateY(0) rotate(0);
+    }
+
+    50%{
+        transform:translateY(-10px) rotate(-2deg);
+    }
+
+}
+
+
+/* BUTTON */
+
+button{
+
+    border:none;
+
+    background:#df3934;
+
+    color:white;
+
+    padding:14px 26px;
+
+    border-radius:30px;
+
+    font-family:inherit;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    margin:10px 4px;
+
+    box-shadow:
+    0 5px 0 #a62220;
+
+}
+
+
+button:active{
+
+    transform:translateY(3px);
+
+    box-shadow:
+    0 2px 0 #a62220;
+
+}
+
+
+.light{
+
+    background:white;
+
+    color:#d4332f;
+
+    border:2px solid #d4332f;
+
+    box-shadow:none;
+
+}
+
+
+/* GIFTS */
+
+.gifts{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin:30px 0;
+
+}
+
+
+.gift{
+
+    font-size:58px;
+
+    cursor:pointer;
+
+    display:inline-block;
+
+    animation:
+    giftBounce 1.5s infinite;
+
+    transition:.3s;
+
+}
+
+
+.gift:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+
+.gift:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+
+.gift:hover{
+
+    transform:
+    scale(1.2)
+    rotate(-8deg);
+
+}
+
+
+@keyframes giftBounce{
+
     0%,100%{
         transform:translateY(0);
     }
+
     50%{
-        transform:translateY(-10px);
+        transform:translateY(-9px);
     }
+
 }
 
-/* Hearts */
-.hearts{
-    font-size:25px;
-    letter-spacing:6px;
-    margin-bottom:10px;
-}
 
-/* Buttons */
-button{
-    border:0;
-    background:#df3934;
-    color:white;
-    padding:14px 25px;
-    border-radius:30px;
-    font-size:17px;
-    font-weight:bold;
-    font-family:inherit;
-    margin:10px 4px;
-    box-shadow:0 5px 0 #a62220;
-    cursor:pointer;
-}
+/* PHOTO SECTION */
 
-button:active{
-    transform:translateY(3px);
-    box-shadow:0 2px 0 #a62220;
-}
-
-.light{
-    background:white;
-    color:#d93631;
-    border:2px solid #d93631;
-    box-shadow:none;
-}
-
-/* Gifts */
-.gifts{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin:25px 0;
-}
-
-.gift{
-    font-size:55px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.gift:hover{
-    transform:scale(1.15) rotate(-8deg);
-}
-
-/* Photo screen */
 .photo-box{
+
     width:100%;
-    height:55vh;
-    min-height:350px;
+
+    height:53vh;
+
+    min-height:330px;
+
     background:white;
+
     border:5px solid white;
+
     border-radius:25px;
+
     overflow:hidden;
-    box-shadow:0 5px 0 #df3934;
+
     position:relative;
+
+    box-shadow:
+    0 5px 0 #df3934;
+
 }
+
 
 .photo-box img{
+
     width:100%;
+
     height:100%;
+
     object-fit:contain;
+
     background:#f5eee8;
+
 }
+
 
 .caption{
+
     position:absolute;
+
     bottom:12px;
+
     left:12px;
+
     right:12px;
+
     padding:11px;
-    background:rgba(255,250,244,.95);
+
+    background:
+    rgba(255,250,244,.95);
+
     border:2px dashed #df3934;
+
     border-radius:18px;
+
     font-size:16px;
+
     font-weight:bold;
-    color:#642222;
+
+    color:#632424;
+
 }
 
-/* Letter */
+
+/* PHOTO DOTS */
+
+.dots{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:7px;
+
+    margin:12px;
+
+}
+
+
+.dot{
+
+    width:9px;
+
+    height:9px;
+
+    border-radius:50%;
+
+    background:#e5b0ac;
+
+}
+
+
+.dot.activeDot{
+
+    background:#d62f2b;
+
+}
+
+
+/* BACK */
+
+.back{
+
+    position:absolute;
+
+    top:14px;
+
+    left:12px;
+
+    background:transparent;
+
+    color:#c62e2b;
+
+    box-shadow:none;
+
+    font-size:14px;
+
+    padding:5px 10px;
+
+}
+
+
+/* LETTER */
+
 .letter{
+
     text-align:left;
+
     background:#fffaf1;
-    border:2px dashed #df3934;
+
+    border:2px dashed #df4742;
+
     border-radius:20px;
+
     padding:18px;
-    color:#542323;
+
     font-size:16px;
+
     line-height:1.7;
+
+    color:#542323;
+
 }
 
-/* Award */
+
+/* FUNNY FACTS */
+
+.fact{
+
+    background:#fff4e6;
+
+    border:2px solid #ffc5bd;
+
+    border-radius:18px;
+
+    padding:12px;
+
+    margin:10px 0;
+
+    font-size:16px;
+
+    color:#542323;
+
+}
+
+
+/* FINAL AWARD */
+
 .award{
-    padding:25px 10px;
-    border:7px double #d19a28;
+
     background:#fffbea;
+
+    border:7px double #d19a28;
+
     border-radius:15px;
+
+    padding:25px 12px;
+
+    box-shadow:
+    0 8px 0 #c18b24;
+
 }
 
-.award h1{
-    color:#a66c13;
-    font-family:Georgia,serif;
-    font-size:30px;
-}
 
 .medal{
-    font-size:60px;
+
+    font-size:65px;
+
 }
 
-/* Back button */
-.back{
-    position:absolute;
-    top:15px;
-    left:15px;
-    background:transparent;
-    color:#c92f2c;
-    box-shadow:none;
-    padding:5px 10px;
-    font-size:14px;
+
+.award h1{
+
+    font-family:Georgia,serif;
+
+    color:#a46b12;
+
+    font-size:30px;
+
 }
 
-/* Confetti */
+
+/* CONFETTI */
+
 .confetti{
+
     position:fixed;
+
     top:-30px;
+
     font-size:23px;
-    animation:fall 3s linear forwards;
+
     pointer-events:none;
+
     z-index:100;
+
+    animation:
+    fall 3s linear forwards;
+
 }
+
 
 @keyframes fall{
+
     to{
-        transform:translateY(110vh) rotate(700deg);
+
+        transform:
+        translateY(110vh)
+        rotate(700deg);
+
         opacity:0;
+
     }
+
 }
+
 </style>
+
 </head>
 
 
 <body>
 
+
 <div class="app">
 
 
+<!-- ================================= -->
 <!-- SCREEN 1 -->
-<section class="screen active" id="screen0">
+<!-- ================================= -->
+
+<section
+class="screen active"
+id="screen0">
 
 <div class="card">
 
-<div class="hearts">❤️ ✨ ❤️</div>
+<div class="hearts">
+❤️ ✨ ❤️
+</div>
 
-<img src="shinchan.png"
-     class="shinchan"
-     alt="Shinchan">
 
-<h1>I made something for you...</h1>
+<img
+src="shinchan.png"
+class="shinchan"
+alt="Shinchan">
+
+
+<h1>
+I made something for you...
+</h1>
+
 
 <p>
-    Do you wanna see it,<br>
-    <b>Bhaiyuu? 🥺❤️</b>
-</p>
+
+Do you wanna see it,
 
 <br>
 
-<button onclick="nextScreen(1)">
-    YESSS ❤️
+<b>
+Bhaiyuu? 🥺❤️
+</b>
+
+</p>
+
+
+<br>
+
+
+<button
+onclick="goTo(1)">
+
+YESSS ❤️
+
 </button>
 
-<button class="light" onclick="noButton()">
-    NO 😒
+
+<button
+class="light"
+onclick="sayNo()">
+
+NO 😒
+
 </button>
 
-<p id="noMessage"></p>
+
+<p
+id="noMessage"
+class="small">
+
+</p>
+
 
 </div>
 
@@ -297,45 +653,89 @@ button:active{
 
 
 
-<!-- SCREEN 2 -->
-<section class="screen" id="screen1">
+<!-- ================================= -->
+<!-- SCREEN 2 : GIFTS -->
+<!-- ================================= -->
 
-<button class="back" onclick="nextScreen(0)">
+<section
+class="screen"
+id="screen1">
+
+<button
+class="back"
+onclick="goTo(0)">
+
 ← Back
+
 </button>
+
 
 <div class="card">
 
-<div class="hearts">🎁 🎁 🎁</div>
+<div class="hearts">
+🎁 ❤️ 🎁
+</div>
+
 
 <h2>
+
 Something is waiting for you 👀
+
 </h2>
 
+
 <p>
+
 Pick one gift...
+
+<br>
+
+<b>
+But choose wisely 😂
+</b>
+
 </p>
+
 
 <div class="gifts">
 
-<span class="gift" onclick="nextScreen(2)">
+
+<span
+class="gift"
+onclick="goTo(2)">
+
 🎁
+
 </span>
 
-<span class="gift" onclick="nextScreen(2)">
+
+<span
+class="gift"
+onclick="goTo(3)">
+
 🎁
+
 </span>
 
-<span class="gift" onclick="nextScreen(2)">
+
+<span
+class="gift"
+onclick="goTo(4)">
+
 🎁
+
 </span>
+
 
 </div>
 
-<p>
-Whatever you choose...<br>
-you're getting a Rakhi surprise 😂❤️
+
+<p class="small">
+
+Each gift has a different surprise for you ❤️
+
 </p>
+
 
 </div>
 
@@ -343,35 +743,82 @@ you're getting a Rakhi surprise 😂❤️
 
 
 
-<!-- PHOTO SCREEN -->
-<section class="screen" id="screen2">
+<!-- ================================= -->
+<!-- GIFT 1 : PHOTOS -->
+<!-- ================================= -->
 
-<button class="back" onclick="nextScreen(1)">
+<section
+class="screen"
+id="screen2">
+
+<button
+class="back"
+onclick="goTo(1)">
+
 ← Back
+
 </button>
+
 
 <div class="card">
 
+
 <h2>
-Our Memories 📸
+
+Gift #1 📸
+
 </h2>
+
+
+<p>
+
+Okay Bhaiyuu...
+
+<br>
+
+Let's see some memories ❤️
+
+</p>
+
+
+<br>
+
 
 <div class="photo-box">
 
-<img id="memoryPhoto"
-     src="photo1.jpg"
-     alt="Bhaiyuu">
 
-<div class="caption"
-     id="photoCaption">
+<img
+id="memoryPhoto"
+src="photo1.jpg"
+alt="Bhaiyuu memory">
+
+
+<div
+class="caption"
+id="photoCaption">
+
 Mera calm & composed Bhaiyuu ❤️
-</div>
 
 </div>
 
-<button onclick="nextPhoto()">
+
+</div>
+
+
+<div
+class="dots"
+id="dots">
+
+</div>
+
+
+<button
+onclick="nextPhoto()">
+
 NEXT MEMORY ➜
+
 </button>
+
 
 </div>
 
@@ -379,48 +826,97 @@ NEXT MEMORY ➜
 
 
 
-<!-- MESSAGE SCREEN -->
-<section class="screen" id="screen3">
+<!-- ================================= -->
+<!-- GIFT 2 : FUNNY -->
+<!-- ================================= -->
 
-<button class="back" onclick="nextScreen(2)">
+<section
+class="screen"
+id="screen3">
+
+<button
+class="back"
+onclick="goTo(1)">
+
 ← Back
+
 </button>
+
 
 <div class="card">
 
+
 <div class="hearts">
-🪢 ❤️ 🪢
+
+😂 ❤️ 😂
+
 </div>
 
+
 <h2>
-Happy Raksha Bandhan Bhaiyuu! ❤️
+
+Gift #2 😂
+
 </h2>
 
-<p>
-Tum sirf mere bhai nahi ho...
-<br><br>
 
-Tum mere favourite
-<b>trouble-maker</b>,
-protector aur
-partner-in-crime ho 😂❤️
+<p>
+
+<b>
+Bhaiyuu.exe — Some Facts 😂
+</b>
+
 </p>
+
 
 <br>
 
-<p>
-Kitni bhi fights ho,
-kitni bhi nok-jhok ho...
-<br><br>
 
-<b>
-You're still one of my favourite people. 🥹❤️
-</b>
-</p>
+<div class="fact">
 
-<button onclick="nextScreen(4)">
-ONE LAST THING 💌
+☑️ Bike ke saath alag hi love story 🏍️
+
+</div>
+
+
+<div class="fact">
+
+☑️ Photos mein hamesha hero 😎
+
+</div>
+
+
+<div class="fact">
+
+☑️ Irritate karne mein PhD 🎓😭
+
+</div>
+
+
+<div class="fact">
+
+☑️ Thoda zyada handsome hone ka attitude 😌
+
+</div>
+
+
+<div class="fact">
+
+☑️ Secretly... sabse best bhai ❤️
+
+</div>
+
+
+<br>
+
+
+<button
+onclick="goTo(1)">
+
+BACK TO GIFTS 🎁
+
 </button>
+
 
 </div>
 
@@ -428,53 +924,108 @@ ONE LAST THING 💌
 
 
 
-<!-- LETTER -->
-<section class="screen" id="screen4">
+<!-- ================================= -->
+<!-- GIFT 3 : EMOTIONAL -->
+<!-- ================================= -->
 
-<button class="back" onclick="nextScreen(3)">
+<section
+class="screen"
+id="screen4">
+
+<button
+class="back"
+onclick="goTo(1)">
+
 ← Back
+
 </button>
+
 
 <div class="card">
 
+
+<div class="hearts">
+
+🪢 ❤️ 🪢
+
+</div>
+
+
 <h2>
-For You, Bhaiyuu 💌
+
+Gift #3 💌
+
 </h2>
+
+
+<p>
+
+This one is a little different...
+
+</p>
+
+
+<br>
+
 
 <div class="letter">
 
+
 Dear Bhaiyuu ❤️
 
-<br><br>
-
-Thank you for being there,
-for annoying me,
-for making me laugh
-and for always being someone
-I can count on.
 
 <br><br>
 
-Shayad main har baar bol nahi paati,
-but you really mean a lot to me. 🥺❤️
+
+Hum kitna bhi ladein,
+
+kitni bhi nok-jhok ho,
+
+at the end of the day
+
+you'll always be my brother
+
+and one of my safest people. 🥹
+
 
 <br><br>
+
+
+Main har baar bol nahi paati,
+
+but you really mean
+
+a lot to me. ❤️
+
+
+<br><br>
+
 
 Aur haan...
 
-meri taraf se tumhara
-<b>"annoying sister"</b>
-subscription lifetime hai. 😂
-
 <br><br>
 
-No refunds. 😌❤️
+
+<b>
+
+You're stuck with me forever. 😂❤️
+
+</b>
+
 
 </div>
 
-<button onclick="nextScreen(5);confetti()">
-OPEN YOUR SURPRISE 🏆
+
+<br>
+
+
+<button
+onclick="goTo(5);confetti()">
+
+FINAL SURPRISE 🎁
+
 </button>
+
 
 </div>
 
@@ -482,65 +1033,130 @@ OPEN YOUR SURPRISE 🏆
 
 
 
+<!-- ================================= -->
 <!-- FINAL -->
-<section class="screen" id="screen5">
+<!-- ================================= -->
+
+<section
+class="screen"
+id="screen5">
+
 
 <div class="card">
 
+
 <div class="award">
 
+
 <div class="medal">
+
 🏆
+
 </div>
 
+
 <h1>
+
 BEST BHAIYUU AWARD
+
 </h1>
 
-<p>
-Presented with unlimited
-love, nok-jhok & drama ❤️
-</p>
 
 <br>
 
+
 <p>
+
+Presented with unlimited
+
+love, nok-jhok & drama ❤️
+
+</p>
+
+
+<br>
+
+
+<p>
+
 <b>
 To: Bhaiyuu
 </b>
+
 </p>
+
 
 <br>
 
+
 <p>
+
 For being my protector,
+
 partner-in-crime
+
 and forever family.
+
 </p>
+
+
+<br>
+
 
 <div class="hearts">
+
 ❤️ ❤️ ❤️
-</div>
 
 </div>
+
+
+</div>
+
 
 <br>
 
-<p style="font-size:20px">
+
+<p
+style="font-size:20px">
+
 <b>
-You're stuck with me forever. 😂❤️
+
+Happy Raksha Bandhan
+
+Bhaiyuu! ❤️
+
 </b>
+
 </p>
 
+
 <br>
+
 
 <p>
-— Your annoying sister 💗
+
+You're stuck with me forever. 😂❤️
+
 </p>
 
-<button onclick="nextScreen(0)">
+
+<br>
+
+
+<p class="small">
+
+— Your annoying sister 💗
+
+</p>
+
+
+<button
+onclick="goTo(0)">
+
 REPLAY 🔄
+
 </button>
+
 
 </div>
 
@@ -548,44 +1164,26 @@ REPLAY 🔄
 
 
 </div>
+
 
 
 <script>
 
-let photoIndex = 0;
 
-const photos = [
+/* ================================= */
+/* SCREEN CONTROL */
+/* ================================= */
 
-{
-    image:"photo1.jpg",
-    caption:"Mera calm & composed Bhaiyuu ❤️"
-},
-
-{
-    image:"photo2.jpg",
-    caption:"Mera rider, mera hero 😎❤️"
-},
-
-{
-    image:"photo3.jpg",
-    caption:"Hamesha saath, hamesha best ❤️"
-},
-
-{
-    image:"photo4.jpg",
-    caption:"Mera handsome Bhaiyuu 🥹❤️"
-}
-
-];
-
-
-function nextScreen(number){
+function goTo(number){
 
     document
     .querySelectorAll(".screen")
-    .forEach(screen=>{
+    .forEach(function(screen){
+
         screen.classList.remove("active");
+
     });
+
 
     document
     .getElementById("screen"+number)
@@ -594,12 +1192,95 @@ function nextScreen(number){
 }
 
 
-function noButton(){
+/* ================================= */
+/* NO BUTTON */
+/* ================================= */
+
+function sayNo(){
 
     document
     .getElementById("noMessage")
     .innerHTML =
-    "No dabaya?! 😭 Ab YES dabana padega 😂❤️";
+    "No dabaya?! 😭😂 Ek baar YES try karo ❤️";
+
+}
+
+
+/* ================================= */
+/* PHOTOS */
+/* ================================= */
+
+let photoIndex = 0;
+
+
+const photos = [
+
+    {
+        image:"photo1.jpg",
+
+        caption:
+        "Mera calm & composed Bhaiyuu ❤️"
+    },
+
+
+    {
+        image:"photo2.jpg",
+
+        caption:
+        "Mera rider, mera hero 😎🏍️❤️"
+    },
+
+
+    {
+        image:"photo3.jpg",
+
+        caption:
+        "Hamesha saath, hamesha best ❤️"
+    },
+
+
+    {
+        image:"photo4.jpg",
+
+        caption:
+        "Mera handsome Bhaiyuu 🥹❤️"
+    }
+
+];
+
+
+function updateDots(){
+
+    const dots =
+    document.getElementById("dots");
+
+
+    dots.innerHTML="";
+
+
+    photos.forEach(
+    function(photo,index){
+
+        const dot =
+        document.createElement("span");
+
+
+        dot.className =
+        "dot";
+
+
+        if(index === photoIndex){
+
+            dot.classList.add(
+                "activeDot"
+            );
+
+        }
+
+
+        dots.appendChild(dot);
+
+    });
 
 }
 
@@ -608,63 +1289,102 @@ function nextPhoto(){
 
     photoIndex++;
 
+
+    /* After fourth photo */
+
     if(photoIndex >= photos.length){
 
-        nextScreen(3);
+        photoIndex = 0;
+
+        goTo(1);
 
         return;
 
     }
+
 
     document
     .getElementById("memoryPhoto")
     .src =
     photos[photoIndex].image;
 
+
     document
     .getElementById("photoCaption")
     .innerText =
     photos[photoIndex].caption;
 
+
+    updateDots();
+
 }
 
 
+updateDots();
+
+
+
+/* ================================= */
+/* CONFETTI */
+/* ================================= */
+
 function confetti(){
 
-    const emojis=[
+    const emojis = [
+
         "❤️",
         "💗",
         "✨",
         "🎀",
         "🪢",
         "🎉"
+
     ];
 
-    for(let i=0;i<40;i++){
 
-        let item=
+    for(
+        let i=0;
+        i<45;
+        i++
+    ){
+
+        const item =
         document.createElement("div");
 
-        item.className="confetti";
 
-        item.innerText=
+        item.className =
+        "confetti";
+
+
+        item.innerText =
         emojis[
             Math.floor(
-                Math.random()*emojis.length
+                Math.random()
+                *
+                emojis.length
             )
         ];
 
-        item.style.left=
+
+        item.style.left =
         Math.random()*100+"vw";
 
-        item.style.animationDelay=
+
+        item.style.animationDelay =
         Math.random()+"s";
+
 
         document.body.appendChild(item);
 
-        setTimeout(()=>{
+
+        setTimeout(
+        function(){
+
             item.remove();
-        },3500);
+
+        },
+        3500
+        );
 
     }
 
